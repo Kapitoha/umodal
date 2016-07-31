@@ -19,6 +19,8 @@ Paste this code after bootstrap and jquery.
 <link rel="stylesheet" type="text/css" href="https://rawgit.com/Kapitoha/umodal/master/v1/css/umodal-default.css">
 <script src="https://raw.githubusercontent.com/Kapitoha/umodal/master/v1/umodal.js"></script>
 ```
+### Short demos
+[Demos]
 
 License
 ----
@@ -27,4 +29,5 @@ MIT
 
    [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
    [jQuery]: <http://jquery.com>
+   [Demos]:<https://rawgit.com/Kapitoha/umodal/master/example.html>
 

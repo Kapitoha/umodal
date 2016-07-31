@@ -11,13 +11,12 @@
 <!-- Umodal -->
 <link rel="stylesheet" type="text/css"
 	href="https://rawgit.com/Kapitoha/umodal/master/v1/css/umodal-default.css">
-<script
-	src="https://raw.githubusercontent.com/Kapitoha/umodal/master/v1/umodal.js"></script>
+<script src="https://raw.githubusercontent.com/Kapitoha/umodal/master/v1/umodal.js"></script>
 </head>
 <body>
 	<header></header>
 	<div class="container">
-		<h1 class="text-center">Umodal demos</h1>
+		<h1 class="text-center">Umodal</h1>
 		<div class="row">
 			<h3>Possible ways to create window</h3>
 			<div>
@@ -36,9 +35,9 @@
 			<hr />
 
 			<h3>Set window by setters</h3>
-			<pre>$.umodal().setTitle('Assigned title').setText('Assigned text').show();</pre>
+			<pre>$.umodal().title('Assigned title').text('Assigned text').show();</pre>
 			<button
-				onclick="$.umodal().setTitle('Assigned title').setText('Assigned text').show();">Show</button>
+				onclick="$.umodal().title('Assigned title').text('Assigned text').show();">Show</button>
 			<hr />
 		</div>
 		<div class="row">
@@ -62,14 +61,14 @@
 			<div>
 				<pre>
 $.umodal('some text')
-    .addButton('ok', function(){alert('pressed OK button')})
-    .addButton('cancel', {class:'btn btn-warning', click:function(){alert('pressed cancel button')}})
-    .show();
+    .button('ok', function(){alert('pressed OK button')})
+    .button('cancel', {class:'btn btn-warning', click:function(){alert('pressed cancel button')}})
+	.show();
 				</pre>
 				<button
 					onclick="$.umodal('some text')
-				.addButton('ok', function(){alert('pressed OK button')})
-				.addButton('cancel', {class:'btn btn-warning', click:function(){alert('pressed cancel button')}})
+				.button('ok', function(){alert('pressed OK button')})
+				.button('cancel', {class:'btn btn-warning', click:function(){alert('pressed cancel button')}})
 				.show();">Show</button>
 			</div>
 		</div>

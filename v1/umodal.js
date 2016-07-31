@@ -69,6 +69,7 @@ $(document).ready(function () {
                 loadVariables(args[i]);
             }
         }
+        
 
         function loadVariables(array){
             for (var key in array) {
@@ -76,20 +77,34 @@ $(document).ready(function () {
                     vars[key] = array[key];
                 }
             }
+            
         }
-
+//Text
+        this.text = function(text) {
+			return this.setText(text);
+		};
         this.setText = function(text){
             vars['text']=text;
             return this;
         };
+//Title 
+        this.title = function(title) {
+			return this.setTitle(title);
+		}
         this.setTitle = function(title){
             vars['title']=title;
             return this;
         };
+        
+//Theme       
         this.theme = function(theme){
             vars.theme=theme;
             return this;
         };
+        this.setTheme = function(theme) {
+			return this.theme(theme);
+		}
+        
         this.show = function () {
             var builder = new FormBuilder().setHeader(vars.header).setBody(vars.body).setFooter(vars.footer).setContent(vars.content);
             modalBlock.html(builder.getForm());
@@ -101,26 +116,51 @@ $(document).ready(function () {
         function hideModal(){
             modalBlock.find('.modal').modal('hide');
         }
+        
+//Header
+        this.header = function(header) {
+			return this.setHeader(header);
+		}
         this.setHeader = function(header){
             vars['header']=header;
             return this;
         };
+        
+//Body
+        this.body = function(body) {
+			return this.setBody(body);
+		}
         this.setBody=function(body){
             vars.body=body;
             return this;
         };
+//Footer
+        this.footer = function(footer) {
+			return this.setFooter(footer);
+		}
         this.setFooter = function(footer){
             vars.footer = footer;
             return this;
         };
+        
+//Content
+        this.content = function(content) {
+			return this.setContent(content);
+		}
         this.setContent = function(content){
             vars.content=content;
             return this;
         };
+        
+//Button
         this.addButton=function(button, action){
-            vars.buttons[button] = action;
-            return this;
+        	vars.buttons[button] = action;
+        	return this;
         };
+        this.button = function(btn, action) {
+        	vars.buttons[btn] = action;
+        	return this;
+		}
 
        function FormBuilder() {
             var base = $('<div class="modal fade text-center umodal-base-'+vars.theme+'" role="dialog"></div>');
