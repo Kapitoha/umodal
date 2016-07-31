@@ -88,13 +88,13 @@ $(document).ready(function () {
             return this;
         };
 //Title 
+        this.setTitle = function(title){
+        	vars['title']=title;
+        	return this;
+        };
         this.title = function(title) {
 			return this.setTitle(title);
 		}
-        this.setTitle = function(title){
-            vars['title']=title;
-            return this;
-        };
         
 //Theme       
         this.theme = function(theme){
