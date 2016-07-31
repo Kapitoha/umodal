@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Umodal examples</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- Umodal -->
+<link rel="stylesheet" type="text/css"
+	href="https://rawgit.com/Kapitoha/umodal/master/v1/css/umodal-default.css">
+<script
+	src="https://raw.githubusercontent.com/Kapitoha/umodal/master/v1/umodal.js"></script>
+</head>
+<body>
+	<header></header>
+	<div class="container">
+		<h1 class="text-center">Umodal demos</h1>
+		<div class="row">
+			<h3>Possible ways to create window</h3>
+			<div>
+				<pre>umodal()</pre>
+				<pre>$.umodal()</pre>
+			</div>
+			<hr />
+
+			<h3>Set window by constructor</h3>
+
+			<pre>$.umodal('some text').show();</pre>
+			<button onclick="$.umodal('some text').show();">Show</button>
+
+			<pre>umodal('Some title', 'some text').show();</pre>
+			<button onclick="$.umodal('Some title', 'some text').show();">Show</button>
+			<hr />
+
+			<h3>Set window by setters</h3>
+			<pre>$.umodal().setTitle('Assigned title').setText('Assigned text').show();</pre>
+			<button
+				onclick="$.umodal().setTitle('Assigned title').setText('Assigned text').show();">Show</button>
+			<hr />
+		</div>
+		<div class="row">
+			<h3>Set theme</h3>
+			<p>Possible themes: default, info, primary, success, warning,
+				danger</p>
+			<div>
+				<pre>umodal('Info', 'This is info theme assigned by function param', 'info').show();</pre>
+				<button
+					onclick="umodal('Info', 'This is info theme assigned by function param', 'info').show();">Show</button>
+			</div>
+			<div>
+				<pre>$.umodal('Success', 'This is success theme assigned by setter').theme('success').show();</pre>
+				<button
+					onclick="$.umodal('Success', 'This is success theme assigned by setter').theme('success').show();">Show</button>
+			</div>
+			<hr />
+		</div>
+		<div class="row">
+			<h3>Adding buttons</h3>
+			<div>
+				<pre>
+$.umodal('some text')
+    .addButton('ok', function(){alert('pressed OK button')})
+    .addButton('cancel', {class:'btn btn-warning', click:function(){alert('pressed cancel button')}})
+    .show();
+				</pre>
+				<button
+					onclick="$.umodal('some text')
+				.addButton('ok', function(){alert('pressed OK button')})
+				.addButton('cancel', {class:'btn btn-warning', click:function(){alert('pressed cancel button')}})
+				.show();">Show</button>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<h3>Set custom header, body and footer</h3>
+			<pre>
+function customWindow() { 
+    $.umodal()
+    .setHeader('&lt;h1&gt;Custom Header&lt;/h1&gt;')
+    .setBody('&lt;div&gt;&lt;p&gt;Custom body&lt;/p&gt;&lt;/div&gt;')
+    .setFooter('&lt;div class=&quot;text-center&quot;&gt;&lt;p&gt;Custom footer&lt;/p&gt;&lt;button type=&quot;button&quot; data-dismiss=&quot;modal&quot;&gt;Ok&lt;/button&gt;&lt;/div&gt;')
+    .show(); 
+}
+</pre>
+			<p>
+				Also, with function
+				<code>.setContent('some content')</code>
+				possible to set whole page
+			</p>
+			<script>
+				function customWindow() {
+					$
+							.umodal()
+							.setHeader('<h1>Custom Header</h1>')
+							.setBody('<div><p>Custom body</p></div>')
+							.setFooter(
+									'<div class="text-center"><p>Custom footer</p><button type="button" data-dismiss="modal">Ok</button></div>')
+							.show();
+				}
+			</script>
+			<button onclick="customWindow();">Show</button>
+		</div>
+		<hr />
+		<div class="row">
+			<p>There is another way to set all parameters and elements.
+				Everything can be added by passing an object into parameter</p>
+				<pre>
+function setByObject() {
+    var object = {
+        title : 'Alert',
+        text : 'Would you like to open repository in new window?',
+        theme: 'primary',
+        buttons : {
+            Yes : {
+                class : 'btn btn-success',
+                click:function(){
+                    window.open('https://github.com/Kapitoha/umodal', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
+                }
+            },
+            No:''
+        }
+    }
+    $.umodal(object).show();
+}				
+				</pre>
+			<script type="text/javascript">
+				function setByObject() {
+					var object = {
+						title : 'Alert',
+						text : 'Would you like to open repository in new window?',
+						theme: 'primary',
+						buttons : {
+							Yes : {
+								class : 'btn btn-success',
+								click:function(){
+									window.open('https://github.com/Kapitoha/umodal', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
+								}
+							},
+							No:''
+						}
+					}
+					$.umodal(object).show();
+				}
+			</script>
+			<button onclick="setByObject()">Open window</button>
+		</div>
+		<hr/>
+	</div>
+	<footer>
+		<div class="container" style="padding: 15px">
+			<div class="row">
+				<a href="https://github.com/Kapitoha/umodal">Umodal</a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,5 +1,6 @@
 /**
  * Created by kapitoha on 22.07.16.
+ * v. 1.0
  */
 var umodal = function(){
     alert('umodal not instantiated yet');
