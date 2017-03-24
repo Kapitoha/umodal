@@ -16,8 +16,8 @@ Umodal uses a number of open source projects to work properly:
 ### Installation
 Paste this code after bootstrap and jquery.
 ```html
-<link rel="stylesheet" type="text/css" href="https://rawgit.com/Kapitoha/umodal/master/v1/css/umodal-default.css">
-<script src="https://raw.githubusercontent.com/Kapitoha/umodal/master/v1/umodal.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Kapitoha/umodal/abce554e/v1/css/umodal-default.css">
+<script src="https://cdn.rawgit.com/Kapitoha/umodal/abce554e/v1/umodal.js"></script>
 ```
 ### Short demos
 [Demos]
